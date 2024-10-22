@@ -19,11 +19,11 @@
 
     <distributionManagement>
         <repository>
-            <id>deploymentRepo</id> <!-- ID must match the one in settings.xml -->
+            <id>maven-releases</id> <!-- ID must match the one in settings.xml -->
             <url>http://192.168.33.10:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>deploymentRepo</id>
+            <id>maven-snapshots</id>
             <url>http://192.168.33.10:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
