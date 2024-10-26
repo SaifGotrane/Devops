@@ -77,12 +77,12 @@ class InvoiceServiceImplTest {
         // Setup
         Supplier supplier = new Supplier();
         Invoice invoice = new Invoice();
-        supplier.setInvoices(Set.of(invoice));  // A Set is used here
+        supplier.setInvoices(Set.of(invoice));  // Initialize with a Set
 
         when(supplierRepository.findById(1L)).thenReturn(Optional.of(supplier));
 
         // Execution
-        List<Invoice> invoices = new ArrayList<>(invoiceService.getInvoicesBySupplier(1L)); // Convert Set to List
+        List<Invoice> invoices = invoiceService.getInvoicesBySupplier(1L);  // No need to convert here
 
         // Assertion
         assertNotNull(invoices, "Invoices list should not be null");
