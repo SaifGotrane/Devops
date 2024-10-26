@@ -82,7 +82,7 @@ class InvoiceServiceImplTest {
         when(supplierRepository.findById(1L)).thenReturn(Optional.of(supplier));
 
         // Execution
-        List<Invoice> invoices = invoiceService.getInvoicesBySupplier(1L);  // No need to convert here
+        List<Invoice> invoices = invoiceService.getInvoicesBySupplier(1L);  // No need for conversion here
 
         // Assertion
         assertNotNull(invoices, "Invoices list should not be null");
