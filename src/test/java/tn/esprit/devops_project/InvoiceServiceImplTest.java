@@ -3,7 +3,6 @@ package tn.esprit.devops_project;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -75,17 +74,21 @@ class InvoiceServiceImplTest {
 
     @Test
     void testGetInvoicesBySupplier() {
+        // Setup
         Supplier supplier = new Supplier();
         Invoice invoice = new Invoice();
-        supplier.setInvoices(Set.of(invoice));
+        supplier.setInvoices(Set.of(invoice));  // A Set is used here
 
         when(supplierRepository.findById(1L)).thenReturn(Optional.of(supplier));
 
-        List<Invoice> invoices = invoiceService.getInvoicesBySupplier(1L);
+        // Execution
+        List<Invoice> invoices = new ArrayList<>(invoiceService.getInvoicesBySupplier(1L)); // Convert Set to List
 
+        // Assertion
         assertNotNull(invoices, "Invoices list should not be null");
         assertEquals(1, invoices.size(), "Invoices list size should be 1");
     }
+
 
     @Test
     void testAssignOperatorToInvoice() {
