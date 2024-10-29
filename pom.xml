@@ -16,6 +16,16 @@
     <properties>
         <java.version>11</java.version>
     </properties>
+         <distributionManagement>
+        <repository>
+            <id>maven-releases</id> <!-- ID must match the one in settings.xml -->
+            <url>http://192.168.33.10:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <url>http://192.168.33.10:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
