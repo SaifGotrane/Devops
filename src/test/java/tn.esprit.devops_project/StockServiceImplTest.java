@@ -16,13 +16,13 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class  StockServiceImplTest {
+class StockServiceImplTest {
 
     @Mock
     private StockRepository stockRepository;
 
     @InjectMocks
-    private StockServiceImpl stockService; // Changer ici pour utiliser StockServiceImpl
+    private StockServiceImpl stockService;
 
     private Stock stock;
 
